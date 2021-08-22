@@ -19,3 +19,58 @@
     --mainRed: #db2777;
     --bodyColor: #f6f6f6;
 }
+
+body {
+    font-family: "iranyekan";
+    color: var(--mainBlack);
+    background-color: var(--bodyColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    min-height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.form-container {
+    display: flex;
+}
+form {
+    width: 20rem;
+    background-color: var(--mainWhite);
+    display: flex;
+    justify-content: space-between;
+}
+
+form input {
+    flex: 1; /*flex-grow*/
+}
+
+form input ,
+form button {
+    border: none;
+    outline: none;
+    background-color: var(--mainWhite);
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+form button {
+    color: var(--primaryColor);
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+form button:hover {
+    background-color: var(--primaryColor);
+    color: var(--mainWhite);
+}

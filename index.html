@@ -18,26 +18,30 @@
     <header>
         <h1>To-do List</h1>
     </header>
-    <div class="form-container">
-        <form>
-            <input type="input" class="todo-input"/>
-            <i class="fas fa-plus-circle"></i>
-        </form>
-        <div class="select">
-            <select class="filter-todos" name="todos">
-                <option class="all">all</option>
-                <option class="completed">completed</option>
-                <option class="uncompleted">uncompleted</option>
-            </select>
+    <section class="container">
+        <div class="form-container">
+            <form>
+                <input type="input" class="todo-input"/>
+                <button class="todo-btn" type="submit">
+                    <i class="fas fa-plus-circle"></i>
+                </button>
+            </form>
+            <div class="select">
+                <select class="filter-todos" name="todos">
+                    <option class="all">all</option>
+                    <option class="completed">completed</option>
+                    <option class="uncompleted">uncompleted</option>
+                </select>
+            </div>
         </div>
-    </div>
-    <div class="todo-container">
-        <ul class="todo">
-            <li>task 1</li>
-            <span><i class="far fa-check-square"></i></span>
-            <span><i class="far fa-trash-alt"></i></span>
-        </ul>
-    </div>
+        <div class="todo-container">
+            <ul class="todo">
+                <li>task 1</li>
+                <span><i class="far fa-check-square"></i></span>
+                <span><i class="far fa-trash-alt"></i></span>
+            </ul>
+        </div>
+    </section>
 </body>
 <script src="./todolist.js"></script>
 </html>
