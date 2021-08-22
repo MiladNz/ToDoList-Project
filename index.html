@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>
+    <title>To-do List</title>
     <link 
         rel="stylesheet" 
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
@@ -12,10 +12,32 @@
         crossorigin="anonymous"
         referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css"/>
 </head>
 <body>
-    <p>سلام چطوری</p>
+    <header>
+        <h1>To-do List</h1>
+    </header>
+    <div class="form-container">
+        <form>
+            <input type="input" class="todo-input"/>
+            <i class="fas fa-plus-circle"></i>
+        </form>
+        <div class="select">
+            <select class="filter-todos" name="todos">
+                <option class="all">all</option>
+                <option class="completed">completed</option>
+                <option class="uncompleted">uncompleted</option>
+            </select>
+        </div>
+    </div>
+    <div class="todo-container">
+        <ul class="todo">
+            <li>task 1</li>
+            <span><i class="far fa-check-square"></i></span>
+            <span><i class="far fa-trash-alt"></i></span>
+        </ul>
+    </div>
 </body>
 <script src="./todolist.js"></script>
 </html>
