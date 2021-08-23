@@ -92,8 +92,33 @@ form button:hover {
 
 .todo li {
     flex: 1;
+    color: var(--primaryColor);
+    font-weight: bold;
 }
 
 .todo span {
-    
+    display: block;
+    font-size: 1.1rem;
+    padding: 0.3rem;
+    cursor: pointer;
+}
+
+.fa-trash-alt {
+    color:var(--mainRed);
+}
+
+.fa-check-square {
+    color: var(--primaryColor);
+}
+
+.select {
+    display: flex;
+    margin-left: 0.4rem;
+}
+
+.filter-todos {
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background-color: var(--mainWhite);
 }
