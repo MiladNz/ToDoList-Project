@@ -40,8 +40,27 @@ function checkRemove(e) {
 function filterTodos(e) {
     //console.log(e.target.value);
     console.log(todoList.childNodes);
-    const todos  =[...todoList.childNodes];
-    todos.forEach(element => {
-        
+    const todos  = [...todoList.childNodes];
+    //console.log(todos);
+    todos.forEach((todo) => {
+        switch (e.target.value) {
+            case "all":
+                todo.style.display = "flex";
+                break;
+            case "completed":
+                if(todo.classList.contains("completed")){
+                    todo.style.display = "flex";
+                }else {
+                    todo.style.display = "none";
+                }
+                break;
+            case "uncompleted":
+                if(!todo.classList.contains("completed")){
+                    todo.style.display = "flex";
+                }else {
+                    todo.style.display = "none";
+                }
+                break;
+        }
     });
 }
