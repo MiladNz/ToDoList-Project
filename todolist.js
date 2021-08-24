@@ -9,6 +9,8 @@ todoList.addEventListener("click", checkRemove);
 
 filterOption.addEventListener("click", filterTodos);
 
+document.addEventListener("DOMContentLoaded", getLocalTodos);
+
 function addTodo(e){
     e.preventDefault();
     //console.log(e);
@@ -72,4 +74,20 @@ function saveLocalTodos(todo){
     : [];
     savedTodos.push(todo);
     localStorage.setItem("todos",JSON.stringify(savedTodos)); 
+}
+
+function getLocalTodos(){
+    let savedTodos = localStorage.getItem("todos")
+    ? JSON.parse(localStorage.getItem("todos"))
+    : [];
+    savedTodos.forEach(todo =>{
+        const todoDiv = document.createElement("div");
+        todoDiv.classList.add("todo");
+        const newTodo =
+    `<li>${todo}</li>
+    <span><i class="far fa-check-square"></i></span>
+    <span><i class="far fa-trash-alt"></i></span>`;
+        todoDiv.innerHTML = newTodo;
+        todoList.appendChild(todoDiv);
+    })
 }
