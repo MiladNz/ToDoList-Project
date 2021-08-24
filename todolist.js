@@ -36,6 +36,7 @@ function checkRemove(e) {
         todo.classList.toggle("completed");
     } else if(classList[1] === "fa-trash-alt"){
         const todo = item.parentElement.parentElement;
+        removeLocalTodos(todo);
         todo.remove();
     }
 }
@@ -90,4 +91,14 @@ function getLocalTodos(){
         todoDiv.innerHTML = newTodo;
         todoList.appendChild(todoDiv);
     })
+}
+
+function removeLocalTodos(todo){
+    // console.log(todo.children[0].innerText);
+
+    let savedTodos = localStorage.getItem("todos")
+    ? JSON.parse(localStorage.getItem("todos"))
+    : [];
+    const filteredTodos = savedTodos.filter(t => t !== todo.children[0].innerText);
+    localStorage.setItem("todos", JSON.stringify(filteredTodos));
 }
