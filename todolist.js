@@ -21,6 +21,7 @@ function addTodo(e){
     <span><i class="far fa-trash-alt"></i></span>`;
     todoDiv.innerHTML = newTodo;
     todoList.appendChild(todoDiv);
+    saveLocalTodos(todoInput.value);
     todoInput.value = "";
 }
 
@@ -63,4 +64,12 @@ function filterTodos(e) {
                 break;
         }
     });
+}
+
+function saveLocalTodos(todo){
+    let savedTodos = localStorage.getItem("todos")
+    ? JSON.parse(localStorage.getItem("todos"))
+    : [];
+    savedTodos.push(todo);
+    localStorage.setItem("todos",JSON.stringify(savedTodos)); 
 }
