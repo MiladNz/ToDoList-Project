@@ -17,14 +17,22 @@ function addTodo(e){
 
     const todoDiv = document.createElement("div");
     todoDiv.classList.add("todo");
+    //console.log(todoDiv);
+    //line 20 output:
+    //<div class=​"todo">​
+    //<li>​</li>
+    //​<span>​<i class=​"far fa-check-square">​…​</i>​</span>​
+    //<span>​<i class=​"far fa-trash-alt">​…​</i>​</span>
+    //​</div>​
+    //
     const newTodo =
     `<li>${todoInput.value}</li>
     <span><i class="far fa-check-square"></i></span>
     <span><i class="far fa-trash-alt"></i></span>`;
     todoDiv.innerHTML = newTodo;
-    todoList.appendChild(todoDiv);
+    todoList.appendChild(todoDiv);  //adding new todoDiv for display it
     saveLocalTodos(todoInput.value);
-    todoInput.value = "";
+    todoInput.value = "";//empty input
 }
 
 function checkRemove(e) {
