@@ -38,10 +38,11 @@ function addTodo(e){
 function checkRemove(e) {
     // console.log(e.target.classList.value);
     const classList =[...e.target.classList]; //convert DomToken to array
-    const item = e.target;
+    const item = e.target; // e.target refers to the clicked span( i > trash icon) element
+    //console.log(item);
     if (classList[1] === "fa-check-square"){
         const todo = item.parentElement.parentElement;
-        todo.classList.toggle("completed");
+        todo.classList.toggle("completed");//adding "completed" to classList
     } else if(classList[1] === "fa-trash-alt"){
         const todo = item.parentElement.parentElement;
         removeLocalTodos(todo);
@@ -51,7 +52,7 @@ function checkRemove(e) {
 
 function filterTodos(e) {
     //console.log(e.target.value);
-    console.log(todoList.childNodes);
+    //console.log(todoList.childNodes);
     const todos  = [...todoList.childNodes];
     //console.log(todos);
     todos.forEach((todo) => {
